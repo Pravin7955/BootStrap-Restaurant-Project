@@ -16,11 +16,12 @@
 
 
 <body>
-    <!-- nab bar -->
+    <!-- Header which includes Navbar and Modal -->
     <header>
-        <nav class="navbar navbar-expand-lg bg-light px-4 border-bottom fixed-top">
+        <nav class="navbar navbar-expand-lg bg px-4">
             <div class="container-fluid">
-                <a class="navbar-brand" href="home.html"><span class="fs-3 text-primary">Food</span> World</a>
+                <a class="navbar-brand dark-mode navbar-hover" href="home.html"><span
+                        class="fs-3 text-primary">Food</span> World</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -29,44 +30,51 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fs-5 text-center">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="home.html">Home</a>
+                            <a class="nav-link navbar-hover dark-mode" href="home.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">About Us</a>
+                            <a class="nav-link navbar-hover dark-mode" href="about.html">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact Us</a>
+                            <a class="nav-link navbar-hover dark-mode" href="contact.html">Contact Us</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle active text-primary" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link navbar-hover dropdown-toggle dark-mode active text-primary" href="#"
+                                id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-current="page"
+                                aria-expanded="false">
                                 Services
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#orderModal"
-                                        href="#">Order Online</a></li>
-                                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#reserveModal"
-                                        href="#">Reserve Table</a></li>
+                            <ul class="dropdown-menu dark-mode" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item dark-mode" data-bs-toggle="modal"
+                                        data-bs-target="#orderModal" href="#">Order Online</a></li>
+                                <li><a class="dropdown-item dark-mode" data-bs-toggle="modal"
+                                        data-bs-target="#reserveModal" href="#">Reserve Table</a></li>
                                 <li>
-                                    <hr class="dropdown-divider">
+                                    <hr class="dropdown-divider dark-mode">
                                 </li>
-                                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#SignInModal"
-                                        href="#">Sign In</a></li>
-                                <li><a class="dropdown-item" href="#signup">Sign Up</a></li>
+                                <li><a class="dropdown-item dark-mode" data-bs-toggle="modal"
+                                        data-bs-target="#SignInModal" href="#">Sign In</a></li>
+                                <li><a class="dropdown-item dark-mode" href="#">Sign Up</a></li>
                             </ul>
                         </li>
-                        <button type="button" class="btn btn-outline-primary btn-sm ms-4 px-4" data-bs-toggle="modal"
-                            data-bs-target="#orderModal">Order Now</button>
+                        <button type="button" class="btn btn-outline-primary btn-sm ms-4 px-3 fs-5"
+                            data-bs-toggle="modal" data-bs-target="#orderModal">Order Now</button>
+                        <div class="form-check form-switch ms-4 mt-2">
+                            <label class="form-check-label" for="themeToggle">Theme</label>
+                            <input class="form-check-input" onclick="themeToggleInput()" type="checkbox"
+                                id="themeToggle">
+                        </div>
                     </ul>
                 </div>
             </div>
         </nav>
 
 
+
         <!-- Sign In Modal -->
         <div class="modal fade" id="SignInModal" tabindex="-1" aria-labelledby="SingIn" aria-hidden="true">
             <div class="modal-dialog">
-                <div class="modal-content">
+                <div class="modal-content dark-mode">
                     <div class="modal-header">
                         <h5 class="modal-title" id="SignIn">Modal title</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -74,15 +82,15 @@
                     <div class="modal-body">
                         <form>
                             <div class="row mb-3">
-                                <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                                <label for="signInEmail" class="col-sm-2 col-form-label">Email</label>
                                 <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail3">
+                                    <input type="email" class="form-control dark-mode" id="signInEmail">
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                                <label for="signInPassword" class="col-sm-2 col-form-label">Password</label>
                                 <div class="col-sm-10">
-                                    <input type="password" class="form-control" id="inputPassword3">
+                                    <input type="password" class="form-control dark-mode" id="signInPassword">
                                 </div>
                             </div>
                         </form>
@@ -99,7 +107,7 @@
         <!-- Online order Modal -->
         <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="OrderOnline" aria-hidden="true">
             <div class="modal-dialog">
-                <div class="modal-content">
+                <div class="modal-content dark-mode">
                     <div class="modal-header">
                         <h5 class="modal-title" id="OrderOnline">Order Online</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -107,33 +115,34 @@
                     <div class="modal-body">
                         <form>
                             <div class="row mb-3">
-                                <label for="inputEmail3" class="col-sm-2 col-form-label">Food</label>
+                                <label for="orderFood" class="col-sm-2 col-form-label">Food</label>
                                 <div class="col-sm-10">
-                                    <select class="form-select" id="inputEmail3" aria-label="Default select example">
+                                    <select class="form-select dark-mode" id="orderFood" aria-label="Default select example">
                                         <option selected>Select Food From Here</option>
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
                                         <option value="3">Three</option>
-                                      </select>
+                                    </select>
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="inputNumber3" class="col-sm-2 col-form-label">Quantity</label>
+                                <label for="orderQuantity" class="col-sm-2 col-form-label">Quantity</label>
                                 <div class="col-sm-10">
-                                    <input type="number" class="form-control" id="inputNumber3">
+                                    <input type="number" class="form-control dark-mode" id="orderQuantity">
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="inputAddress" class="col-sm-2 col-form-label">Address</label>
+                                <label for="orderAddress" class="col-sm-2 col-form-label">Address</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputAddress">
+                                    <input type="text" class="form-control dark-mode" id="orderAddress">
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
                         <button type="reset" class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" onclick="orderPlaced()" class="btn btn-outline-primary" data-bs-dismiss="modal">Order
+                        <button type="submit" onclick="orderPlaced()" class="btn btn-outline-primary"
+                            data-bs-dismiss="modal">Order
                             Now!</button>
                     </div>
                 </div>
@@ -144,7 +153,7 @@
         <!-- Table Reservation Modal -->
         <div class="modal fade" id="reserveModal" tabindex="-1" aria-labelledby="ReserveTable" aria-hidden="true">
             <div class="modal-dialog">
-                <div class="modal-content">
+                <div class="modal-content dark-mode">
                     <div class="modal-header">
                         <h5 class="modal-title" id="ReserveTable">Reserve Table</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -152,27 +161,27 @@
                     <div class="modal-body">
                         <form>
                             <div class="row mb-3">
-                                <label for="inputEmail3" class="col-sm-3 col-form-label">Date</label>
+                                <label for="reserveDate" class="col-sm-3 col-form-label">Date</label>
                                 <div class="col-sm-9">
-                                    <input type="date" class="form-control" id="inputNumber1">
+                                    <input type="date" class="form-control dark-mode" id="reserveDate">
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="inputEmail3" class="col-sm-3 col-form-label">Time</label>
+                                <label for="reserveTime" class="col-sm-3 col-form-label">Time</label>
                                 <div class="col-sm-9">
-                                    <input type="time" class="form-control" id="inputNumber2">
+                                    <input type="time" class="form-control dark-mode" id="reserveTime">
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">Person</label>
+                                <label for="reservePerson" class="col-sm-3 col-form-label">Person</label>
                                 <div class="col-sm-9">
-                                    <input type="number" class="form-control" id="inputNumber3">
+                                    <input type="number" class="form-control dark-mode" id="reservePerson">
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">Table No.</label>
+                                <label for="ReserveTable" class="col-sm-3 col-form-label">Table No.</label>
                                 <div class="col-sm-9">
-                                    <input type="number" class="form-control" id="inputNumber4">
+                                    <input type="number" class="form-control dark-mode" id="ReserveTable">
                                 </div>
                             </div>
                         </form>
@@ -194,7 +203,7 @@
         <div class="contaner">
             <div class="row">
                 <div
-                    class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 offset-md-3 offset-xl-4 offset-lg-4 border p-5 my-5 shadow p-3 mb-5 bg-body rounded">
+                    class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 offset-md-3 offset-xl-4 offset-lg-4 border p-5 my-5 shadow rounded">
                     <h3 class="m-3"><span><i class="fa fa-group text-primary"></i></span> Create New Account</h3>
                     <hr class="m-2">
                     <form class="row g-3">
@@ -258,31 +267,30 @@
     </main>
 
 
-     <!-- Footer Section -->
-     <footer class="bg-light mt-5">
-        <div class="container">
+    <!-- Footer Section -->
+    <footer class="bg-light mt-5">
+        <div class="container-fluid dark-mode">
             <div class="row pt-5">
                 <div class="col-6 col-md-2 mb-3">
                     <h5>Links</h5>
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="contact.html" class="nav-link p-0 text-muted">Contact</a>
+                        <li class="nav-item mb-2"><a href="contact.html" class="nav-link p-0">Contact</a>
                         </li>
-                        <li class="nav-item mb-2"><a href="about.html" class="nav-link p-0 text-muted">About</a></li>
+                        <li class="nav-item mb-2"><a href="about.html" class="nav-link p-0">About</a></li>
                         <li class="nav-item mb-2"><a href="#" data-bs-toggle="modal" data-bs-target="#orderModal"
-                                class="nav-link p-0 text-muted">Order Online</a></li>
+                                class="nav-link p-0">Order Online</a></li>
                         <li class="nav-item mb-2"><a href="#" data-bs-toggle="modal" data-bs-target="#reserveModal"
-                                class="nav-link p-0 text-muted">Reserve Table</a></li>
+                                class="nav-link p-0">Reserve Table</a></li>
                     </ul>
                 </div>
 
                 <div class="col-6 col-md-2 mb-3">
                     <h5>Quick links</h5>
                     <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#home" class="nav-link p-0 text-muted">Home</a></li>
-                        <li class="nav-item mb-2"><a href="#features" class="nav-link p-0 text-muted">Features</a></li>
-                        <li class="nav-item mb-2"><a href="#specialities"
-                                class="nav-link p-0 text-muted">Specialities</a></li>
-                        <li class="nav-item mb-2"><a href="#staff" class="nav-link p-0 text-muted">Staff</a></li>
+                        <li class="nav-item mb-2"><a href="#home" class="nav-link p-0">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#features" class="nav-link p-0">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#specialities" class="nav-link p-0">Specialities</a></li>
+                        <li class="nav-item mb-2"><a href="#staff" class="nav-link p-0">Staff</a></li>
                     </ul>
                 </div>
 
@@ -302,10 +310,13 @@
             <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
                 <p>© 2022 Company, Inc. All rights reserved.</p>
                 <ul class="list-unstyled d-flex">
-                    <li class="ms-3"><a class="link-dark" href="#"><i class="fa fa-twitter-square link-icon"></i></a>
+                    <li class="ms-3"><a class="link-dark" href="#"><i
+                                class="fa fa-twitter-square dark-mode link-icon"></i></a>
                     </li>
-                    <li class="ms-3"><a class="link-dark" href="#"><i class="fa fa-instagram link-icon"></i></a></li>
-                    <li class="ms-3"><a class="link-dark" href="#"><i class="fa fa-facebook-square link-icon"></i></a>
+                    <li class="ms-3"><a class="link-dark" href="#"><i
+                                class="fa fa-instagram dark-mode link-icon"></i></a></li>
+                    <li class="ms-3"><a class="link-dark" href="#"><i
+                                class="fa fa-facebook-square dark-mode link-icon"></i></a>
                     </li>
                 </ul>
             </div>
