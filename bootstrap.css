@@ -5,9 +5,23 @@
     font-family: 'Arima', cursive8
 }
 
+.navbar-hover:hover {
+    color: blue;
+}
+
 .carousel-item img {
     width: 100%;
     height: 80vh;
+}
+
+.card-shadow {
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px 2px rgb(226, 226, 226);
+}
+
+.card-shadow:hover {
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px 2px rgb(160, 160, 224);
 }
 
 .card-img {
@@ -67,4 +81,9 @@
 .card-image-size {
     width: 100%;
     height: 30vh;
+}
+
+.dark-theme {
+    background-color: rgb(34, 34, 34);
+    color: white;
 }
